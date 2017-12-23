@@ -7,7 +7,7 @@ export default props => (
       <input id='description' placeholder='Adicione uma tarefa'></input>
     </div>
     <div>
-      <TheButton hide={true}></TheButton>
+      <TheButton onClick={props.handleAdd}></TheButton>
     </div>
   </div>
 )
