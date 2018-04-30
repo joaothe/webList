@@ -4,8 +4,9 @@ export default props => {
   const renderRows = () => {
     const list = props.list || []
     return list.map(todo => (
-      <tr>
+      <tr key={todo._id}>
         <td>{todo.description}</td>
+        <td><button onClick={() => props.handleRemove(todo)}>Remover</button></td>
       </tr>
     ))
   }
@@ -15,6 +16,7 @@ export default props => {
       <thead>
         <tr>
           <th>Descrição</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody>
