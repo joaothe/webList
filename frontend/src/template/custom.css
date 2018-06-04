@@ -2,3 +2,9 @@
   text-decoration: line-through;
   color: #777;
 }
+
+.styledButton {
+  margin: 10px;
+  background-color: #fff;
+  color: #5e8f58;
+}
