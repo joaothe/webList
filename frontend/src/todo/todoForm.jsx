@@ -1,5 +1,4 @@
 import React from 'react'
-import TheButton from '../template/theButton'
 
 export default props => (
   <div role='form'>
@@ -8,7 +7,8 @@ export default props => (
         value={props.description}></input>
     </div>
     <div>
-      <TheButton onClick={props.handleAdd}></TheButton>
+      <button onClick={props.handleAdd}>Adicionar</button>
+      <button onClick={props.handleSearch}>Pesquisar</button>
     </div>
   </div>
 )
