@@ -1,10 +1,14 @@
 # webList
 
 
-React project
+Front-end ReactJS project
+Back-end NodeJS project
+
+Open a terminal and run:
 
 -  mongod
--  npm run dev on backend folder
--  npm run dev on frontend folder
+   If you have some problem running mongod like "your local server is already in use", run sudo killall -15 mongod.
+   
+-  npm run dev (inside backend folder)
 
-If your local server is already in use, run sudo killall -15 mongod.
+-  npm run dev (inside frontend folder)
