@@ -1,22 +1,8 @@
 import { combineReducers } from 'redux'
+import todoReducer from '../todo/todoReducer'
 
 const rootReducer = combineReducers({
-    todo: () => ({
-        description: 'To study',
-        list: [{
-            _id: 1,
-            description: 'Read new books',
-            done: true
-        },{
-            _id: 2,
-            description: 'Meeting with the team',
-            done: false
-        },{
-            _id: 3,
-            description: 'Make new notes',
-            done: false
-        }]
-    })
+    todo: todoReducer
 })
 
 export default rootReducer
