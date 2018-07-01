@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { changeDescription, search } from './todoActions'
+import { add, changeDescription, search } from './todoActions'
 
 class TodoForm extends Component {
   constructor(props) {
@@ -14,12 +14,14 @@ class TodoForm extends Component {
   }
 
   keyHandler(e) {
+    const { add, search, description } = this.props
     if (e.key === 'Enter') {
-      e.shiftKey ? this.props.handleSearch() : this.props.handleAdd()
+      e.shiftKey ? search() : add(description)
     }
   }
 
   render() {
+    const { add, search, description } = this.props
     return (
       <div role='form'>
         <div>
@@ -28,8 +30,8 @@ class TodoForm extends Component {
           value={this.props.description}></input>
         </div>
         <div>
-          <button onClick={this.props.handleAdd}>Adicionar</button>
-          <button onClick={this.props.handleSearch}>Pesquisar</button>
+          <button onClick={() => add(description)}>Adicionar</button>
+          <button onClick={() => search()}>Pesquisar</button>
         </div>
       </div>
     )
@@ -39,5 +41,5 @@ class TodoForm extends Component {
 
 const mapStateToProps = state => ({description: state.todo.description})
 const mapDispatchToProps = dispatch =>
-    bindActionCreators({ changeDescription, search }, dispatch)
+    bindActionCreators({ add, changeDescription, search }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)
