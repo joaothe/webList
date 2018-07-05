@@ -31,4 +31,18 @@ export const add = (description) => {
   }
 }
 
+export const markAsDone = (todo) => {
+  return dispatch => {
+      axios.put(`${URL}/${todo._id}`, {...todo, done: true})
+          .then(resp => dispatch({type: 'TODO_MARKED_AS_DONE', payload: resp.data}))
+          .then(resp => dispatch(search()))
+  }
+}
+
+/*export const markAsPending = (todo) => {
+  return dispatch => {
+
+  }
+}*/
+
 
