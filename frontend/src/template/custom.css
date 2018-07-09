@@ -8,3 +8,7 @@
   background-color: #fff;
   color: #5e8f58;
 }
+
+.todo-input, .confirm-input-action {
+  margin-bottom: 20px;
+}

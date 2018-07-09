@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { add, changeDescription, search } from './todoActions'
 
+import '../template/custom.css';
+
 class TodoForm extends Component {
   constructor(props) {
     super(props)
@@ -25,11 +27,11 @@ class TodoForm extends Component {
     return (
       <div role='form'>
         <div>
-          <input id='description' placeholder='Adicione uma tarefa' onChange={this.props.changeDescription}
+          <input id='description' className="todo-input" placeholder='Adicione uma tarefa' onChange={this.props.changeDescription}
           onKeyUp={this.keyHandler}
           value={this.props.description}></input>
         </div>
-        <div>
+        <div className="confirm-input-action">
           <button onClick={() => add(description)}>Adicionar</button>
           <button onClick={() => search()}>Pesquisar</button>
         </div>

@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { markAsDone } from './todoActions'
+import { markAsDone, markAsPending } from './todoActions'
 
 const TodoList = props => {
   const renderRows = () => {
@@ -11,7 +11,7 @@ const TodoList = props => {
       <tr key={todo._id}>
         <td className={todo.done ? 'markedAsDone' : ''}>{todo.description}</td>
         <td><button className="styledButton" onClick={() => props.markAsDone(todo)}>Marcar como feito</button></td>
-        <td><button className="styledButton" onClick={() => props.handleMarkAsPending(todo)}>Marcar como pendente</button></td>
+        <td><button className="styledButton" onClick={() => props.markAsPending(todo)}>Marcar como pendente</button></td>
         <td><button className="styledButton" onClick={() => props.handleRemove(todo)}>Remover</button></td>
       </tr>
     ))
@@ -35,5 +35,5 @@ const TodoList = props => {
 
 const mapStateToProps = state => ({list: state.todo.list})
 const mapDispatchToProps = dispatch => 
-    bindActionCreators({ markAsDone }, dispatch)
+    bindActionCreators({ markAsDone, markAsPending }, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList)
