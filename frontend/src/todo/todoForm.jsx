@@ -33,7 +33,7 @@ class TodoForm extends Component {
         </div>
         <div className="confirm-input-action">
           <button onClick={() => add(description)}>Adicionar</button>
-          <button onClick={() => search()}>Pesquisar</button>
+          <button onClick={() => search(description)}>Pesquisar</button>
         </div>
       </div>
     )
